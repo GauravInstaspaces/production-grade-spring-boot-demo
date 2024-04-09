@@ -1,0 +1,242 @@
+{
+	"types": {
+		"models": {
+			"Employees": {
+				"$schema": "http://json-schema.org/draft-04/schema#",
+				"title": "Employees",
+				"properties": {
+					"employeeid": {
+						"type": "string"
+					},
+					"firstname": {
+						"type": "string"
+					},
+					"lastname": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"department": {
+						"type": "string"
+					},
+					"position": {
+						"type": "string"
+					},
+					"manager": {
+						"type": "string"
+					},
+					"hiredate": {
+						"type": "string"
+					},
+					"salary": {
+						"type": "integer"
+					},
+					"address": {
+						"type": "object",
+						"required": [
+							"street",
+							"city",
+							"state",
+							"postal_code",
+							"country"
+						],
+						"$ref": "https://demo.sh/employee/models/Address"
+					},
+					"employeesId": {
+						"type": "string"
+					}
+				},
+				"required": [],
+				"$id": "https://demo.sh/employee/models/Employees",
+				"key": "employeesId"
+			},
+			"Address": {
+				"title": "Address",
+				"$id": "https://demo.sh/employee/models/Address",
+				"properties": {
+					"street": {
+						"type": "string"
+					},
+					"city": {
+						"type": "string"
+					},
+					"state": {
+						"type": "string"
+					},
+					"postalcode": {
+						"type": "string"
+					},
+					"country": {
+						"type": "string"
+					},
+					"addressId": {
+						"type": "string"
+					}
+				},
+				"required": [],
+				"key": "addressId"
+			}
+		},
+		"enums": {}
+	},
+	"action": {
+		"models": {
+			"Employees": {
+				"actions": {
+					"Create": {
+						"enabled": true,
+						"httpVerb": "Post",
+						"apiEnabled": true,
+						"actionType": "sync",
+						"isAuthEnabled": false,
+						"parameters": {}
+					},
+					"Update": {
+						"enabled": true,
+						"httpVerb": "Put",
+						"apiEnabled": true,
+						"actionType": "async",
+						"isAuthEnabled": false,
+						"parameters": {},
+						"path": "/{employeesId}"
+					},
+					"Get": {
+						"enabled": true,
+						"httpVerb": "Get",
+						"apiEnabled": true,
+						"actionType": "sync",
+						"isAuthEnabled": false,
+						"parameters": {},
+						"path": "/{employeesId}"
+					},
+					"Select": {
+						"enabled": true,
+						"httpVerb": "Get",
+						"apiEnabled": true,
+						"actionType": "sync",
+						"isAuthEnabled": false,
+						"parameters": {
+							"selectQueryParameters": {
+								"filters": {},
+								"sortFields": []
+							}
+						},
+						"path": ""
+					},
+					"Delete": {
+						"enabled": true,
+						"httpVerb": "Delete",
+						"apiEnabled": true,
+						"actionType": "sync",
+						"isAuthEnabled": false,
+						"parameters": {},
+						"path": "/{employeesId}"
+					}
+				},
+				"path": "employeess"
+			}
+		}
+	},
+	"project": {
+		"path": "/v1/",
+		"groupName": "sh.demo",
+		"build": {
+			"tool": "maven"
+		},
+		"logger": {
+			"appenderConfig": {
+				"consoleAppender": {
+					"enabled": true
+				},
+				"fileAppender": {
+					"enabled": true
+				}
+			}
+		},
+		"health": {
+			"dependenciesHealthEnabled": true,
+			"enabled": true
+		},
+		"unitTests": {
+			"enabled": true
+		},
+		"packageName": "sh.demo.employee",
+		"folderName": "employee",
+		"projectName": "employee",
+		"version": {
+			"org.springframework.boot": "3.1.4"
+		},
+		"swagger": {
+			"enabled": true
+		},
+		"authentication": {
+			"authSchemetype": [
+				"Bearer JWT"
+			],
+			"authParms": {
+				"jwtAuthParams": {
+					"userId": "",
+					"issuerURL": "https://comapnyemployee.com/",
+					"jwtModel": "Employees"
+				}
+			},
+			"enabled": true
+		},
+		"integrationTests": {
+			"enabled": true
+		}
+	},
+	"config": {
+		"customProperties": ""
+	},
+	"version": 21,
+	"store": {
+		"defaultStorage": {
+			"dataBaseName": "RDBMS",
+			"vendor": {
+				"name": "MYSQL"
+			}
+		}
+	},
+	"outboundevents": {},
+	"channels": {
+		"default": {
+			"channelName": "default",
+			"topicName": "defaultTopic16667",
+			"binderName": "default",
+			"containsMultiSchemaEvents": true
+		}
+	},
+	"binders": {
+		"default": {
+			"type": "kafka",
+			"binderName": "default",
+			"brokers": "localhost:9092"
+		}
+	},
+	"integrations": {
+		"rest": {
+			"requestGroups": {
+				"Default": {
+					"baseUrl": "https://radical.sh/api/",
+					"headers": {
+						"Content-Type": "application/json"
+					},
+					"timeoutInMilliSeconds": 45000,
+					"authScheme": {
+						"type": "No Auth"
+					}
+				}
+			},
+			"restSettings": {
+				"isRequestBodySelectionAllowedForAllVerbs": false
+			},
+			"requests": {}
+		}
+	},
+	"inboundevents": {},
+	"_persist": {
+		"version": 21
+	}
+}

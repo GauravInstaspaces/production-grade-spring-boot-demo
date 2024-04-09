@@ -1,0 +1,24 @@
+{
+	"fugiat00": -16000000,
+	"employeeid": "fugiat Lorem irure",
+	"firstname": "fugiat Lorem irure",
+	"lastname": "fugiat Lorem irure",
+	"email": "fugiat Lorem irure",
+	"department": "fugiat Lorem irure",
+	"position": "fugiat Lorem irure",
+	"manager": "fugiat Lorem irure",
+	"hiredate": "fugiat Lorem irure",
+	"salary": -16000000,
+	"address": {
+		"fugiat00": -16000000,
+		"postal_code": -16000000,
+		"street": "fugiat Lorem irure",
+		"city": "fugiat Lorem irure",
+		"state": "fugiat Lorem irure",
+		"postalcode": "fugiat Lorem irure",
+		"country": "fugiat Lorem irure",
+		"addressId": "fugiat Lorem irure"
+	},
+	"employeesId": "fugiat Lorem irure",
+	"additionalProperty": -16000000
+}

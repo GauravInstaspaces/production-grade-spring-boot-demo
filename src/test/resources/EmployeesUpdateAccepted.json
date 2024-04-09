@@ -1,0 +1,25 @@
+{
+	"fugiat00": -16000000,
+	"eventId": "fugiat Lorem irure",
+	"eventPublishedAt": "1923-08-08T09:36:01.0Z",
+	"eventCreatedAt": "1923-08-08T09:36:01.0Z",
+	"eventType": "fugiat Lorem irure",
+	"data": {
+		"fugiat00": -16000000,
+		"context": {
+			"fugiat00": -16000000,
+			"userContext": {
+				"fugiat00": -16000000,
+				"userId": "fugiat Lorem irure"
+			},
+			"isAuthenticated": false
+		},
+		"employeesId": "fugiat Lorem irure",
+		"updateEmployeesInput": {
+			"access": {
+				"level": "private"
+			}
+		}
+	},
+	"additionalProperty": -16000000
+}
